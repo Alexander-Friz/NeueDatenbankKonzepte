@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "8c2fd5ce-3807-4fa9-a8e3-bbd99981de3c",
+		"name": "NeueDBKonzepte",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30284415"
+	},
+	"item": [
+		{
+			"name": "Neuen Nutzer anlegen",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"test@example.com\",\r\n  \"password\": \"test123\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/users/create"
+			},
+			"response": []
+		},
+		{
+			"name": "Alle Nutzer abfragen",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/users/all"
+			},
+			"response": []
+		},
+		{
+			"name": "Notiz erstellen",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Notiz 1\",\r\n  \"content\": \"Test\",\r\n  \"userId\": \"\"\r\n\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/notes/create"
+			},
+			"response": []
+		},
+		{
+			"name": "Nutzer fragt alle seine Notizen ab",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/notes/user/65df3c86ff83c81b6a9373f8"
+			},
+			"response": []
+		},
+		{
+			"name": "eine Notiz löschen",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:3000/notes/65df4536d88ed3a0a043557d"
+			},
+			"response": []
+		},
+		{
+			"name": "Kategorie anlegen",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Kategorie 1\",\r\n    \"userId\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/categories/create"
+			},
+			"response": []
+		},
+		{
+			"name": "Kategorie löschen",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:3000/categories/65df4b42d1bf3ff5c3e21c0a"
+			},
+			"response": []
+		},
+		{
+			"name": "Nutzer fragt Kategorien ab",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/categories/user/65df3c86ff83c81b6a9373f8"
+			},
+			"response": []
+		},
+		{
+			"name": "Kategorie bearbeiten",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Test 2\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/categories/65df4ea4c3887898af9216e2"
+			},
+			"response": []
+		},
+		{
+			"name": "Notiz bearbeiten",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Notiz 1\",\r\n  \"content\": \"Test\",\r\n  \"userId\": \"65df3c86ff83c81b6a9373f8\",\r\n  \"categories\":[\"65df4ea4c3887898af9216e2\",\"65df4f96bf5c1ed6670bd751\"]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/notes/65df4f61bf5c1ed6670bd74c"
+			},
+			"response": []
+		},
+		{
+			"name": "Nutzer ändern",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"nutzer@example.com\",\r\n  \"password\": \"test123\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/users/65df5a5589137c09b9f9b062"
+			},
+			"response": []
+		},
+		{
+			"name": "Nutzer und Nutzerinhalte löschen",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:3000/users/65df5c2895c42cfc0f923bcb"
+			},
+			"response": []
+		}
+	]
+}
